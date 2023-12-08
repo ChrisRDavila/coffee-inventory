@@ -1,6 +1,7 @@
 import React from "react";
 import OrderList from "./OrderList";
 import NewOrderForm from "./NewOrderForm";
+import OrderDetail from "./OrderDetail";
 
 class OrderControl extends React.Component {
   
@@ -8,7 +9,8 @@ class OrderControl extends React.Component {
       super(props);
       this.state = {
         formVisibleOnPage: false,
-        mainOrderList: []
+        mainOrderList: [],
+        selectedOrder: null
       };
     }
 
@@ -20,19 +22,29 @@ class OrderControl extends React.Component {
 
     handleAddingNewOrderToList = (newOrder) => {
       const newMainOrderList = this.state.mainOrderList.concat(newOrder);
-      this.setState({mainOrderList: newMainOrderList,
-                    formVisibleOnPage: false });
+      this.setState({
+        mainOrderList: newMainOrderList,
+        formVisibleOnPage: false });
+    }
+
+    handleChangingSelectedOrder = (id) => {
+      const selectedOrder = this.state.mainOrderList.filter(order => order.id === id)[0];
+      this.setState({selectedOrder: selectedOrder});
     }
     
 
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.formVisibleOnPage){
+    if (this.state.selectedOrder != null){
+      currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} />
+      buttonText = "Return to Order List";
+    }
+    else if (this.state.formVisibleOnPage){
       currentlyVisibleState = <NewOrderForm onNewOrderCreation={this.handleAddingNewOrderToList}/>;
       buttonText = "Return to Order List";
     } else {
-      currentlyVisibleState = <OrderList orderList={this.state.mainOrderList}/>;
+      currentlyVisibleState = <OrderList orderList={this.state.mainOrderList} onOrderSelection={this.handleChangingSelectedOrder}/>;
       buttonText = "Add Order";
     }
 

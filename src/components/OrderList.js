@@ -8,19 +8,22 @@ function OrderList(props){
       <hr/>
       {mainOrderList.map((order, index) =>
         <Order
+          whenOrderClicked = { props.onOrderSelection }
           name={order.name}
           origin={order.origin}
           price={order.price}
           roast={order.roast}
           amount={order.amount}
-          key={index}/>
+          id={order.id}
+          key={order.id}/>
       )}
     </React.Fragment>
   );
 }
 
 OrderList.propTypes = {
-  orderList: PropTypes.array
+  orderList: PropTypes.array,
+  onOrderSelection: PropTypes.func
 };
 
 export default OrderList;

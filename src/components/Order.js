@@ -1,13 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Order(){
+function Order(props){
   return (
     <React.Fragment>
-      <h3>{props.name} from {props.origin}</h3>
-      <p><em>Price per pound: ${props.price}</em></p>
-      <p><em>Roast: {props.roast}</em></p>
-      <p><em>In Stock: {props.amount}</em></p>
-      <hr/>
+      <div onClick = {() => props.whenOrderClicked(props.id)}>
+        <h3>{props.name} from {props.origin}</h3>
+        <p><em>Price per pound: ${props.price}</em></p>
+        <p><em>Roast: {props.roast}</em></p>
+        <p><em>In Stock: {props.amount}</em></p>
+        <hr/>
+      </div>
     </React.Fragment>
   );
 }
@@ -17,7 +20,8 @@ Order.propTypes = {
   origin: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   roast: PropTypes.string.isRequired,
-  amount: PropTypes.number.isRequired
+  amount: PropTypes.number.isRequired,
+  whenOrderClicked: PropTypes.func,
 };
 
 export default Order;

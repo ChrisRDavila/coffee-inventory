@@ -35,7 +35,7 @@ function EditOrderForm(props){
           type='number'
           name='price'
           min='0'
-          placeholder="price oer pound"
+          placeholder="price per pound"
           className='form-control' />
         <input
           type='text'
@@ -46,7 +46,7 @@ function EditOrderForm(props){
           type='number'
           name='amount'
           min='0'
-          placeholder='bags in inventory' 
+          placeholder='pounds in inventory' 
           className='form-control'/>
 
         <button type='submit'>Edit this List Item</button>

@@ -48,7 +48,7 @@ function NewOrderForm(props){
           type='number'
           name='bags'
           min='0'
-          placeholder='add 130 pounds to inventory' 
+          placeholder='add bag to inventory' 
           className='form-control'/>
 
         <button type='submit'>Add</button>

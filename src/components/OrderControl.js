@@ -10,22 +10,29 @@ class OrderControl extends React.Component {
         formVisibleOnPage: false
       };
     }
+
+    handleClick = () => {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
   
     
 
   render(){
     let currentlyVisibleState = null;
-    let addOrderButton = null;
+    let buttonText = null;
     if (this.state.formVisibleOnPage){
       currentlyVisibleState = <NewOrderForm />;
+      buttonText = "Return to Order List";
     } else {
       currentlyVisibleState = <OrderList />;
-      addOrderButton = <button onClick={this.handleClick}>Add Order</button>;
+      buttonText = "Add Order";
     }
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        {addOrderButton}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }

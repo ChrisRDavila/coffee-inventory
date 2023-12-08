@@ -20,7 +20,8 @@ class OrderControl extends React.Component {
       if (this.state.selectedOrder != null) {
         this.setState({
           formVisibleOnPage: false,
-          selectedOrder: null
+          selectedOrder: null,
+          editing: false
         });
       } else {
         this.setState(prevState => ({
@@ -50,6 +51,17 @@ class OrderControl extends React.Component {
       const newMainOrderList = this.state.mainOrderList.filter(order => order.id !== id);
       this.setState({
         mainOrderList: newMainOrderList,
+        selectedOrder: null
+      });
+    }
+
+    handleEditingOrderInList = (orderToEdit) => {
+      const editedMainOrderList = this.state.mainOrderList
+        .filter(order => order.id !== this.state.selectedOrder.id)
+        .concat(orderToEdit);
+      this.setState({
+        mainOrderList: editedMainOrderList,
+        editing: false,
         selectedOrder: null
       });
     }

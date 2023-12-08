@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Order(props){
+  
   return (
     <React.Fragment>
       <div onClick = {() => props.whenOrderClicked(props.id)}>
@@ -20,7 +21,9 @@ Order.propTypes = {
   origin: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   roast: PropTypes.string.isRequired,
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.number,
+  bags: PropTypes.number,
+  id: PropTypes.string,
   whenOrderClicked: PropTypes.func,
 };
 

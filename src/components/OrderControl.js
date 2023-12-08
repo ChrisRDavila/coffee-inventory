@@ -35,6 +35,16 @@ class OrderControl extends React.Component {
       this.setState({editing: true});
     }
 
+    handleBuyClick = () => {
+      const selectedOrder = this.state.selectedOrder;
+
+      if (selectedOrder.amount > 0) {
+        this.setState({mainOrderList: this.state.mainOrderList.filter(order => order.id !== selectedOrder.id)
+          .concat({...selectedOrder, amount: selectedOrder.amount - 1}),
+          selectedOrder: null});
+        }
+      }
+
     handleAddingNewOrderToList = (newOrder) => {
       const newMainOrderList = this.state.mainOrderList.concat(newOrder);
       this.setState({
@@ -70,12 +80,13 @@ class OrderControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
+    
     if (this.state.editing ) {
-      currentlyVisibleState = <EditOrderForm order = {this.state.selectedOrder} />
+      currentlyVisibleState = <EditOrderForm order = {this.state.selectedOrder} onEditOrder={this.handleEditingOrderInList}/>
       buttonText = "Return to Order List";
     }
     else if (this.state.selectedOrder != null){
-      currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} onClickingDelete={this.handleDeletingOrder} onClickingEdit={this.handleEditClick}/>
+      currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} onClickingDelete={this.handleDeletingOrder} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyClick}/>
       buttonText = "Return to Order List";
     }
     else if (this.state.formVisibleOnPage){

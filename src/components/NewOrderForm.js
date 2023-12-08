@@ -7,7 +7,7 @@ function NewOrderForm(props){
   function handleNewOrderFormSubmission(event) {
     event.preventDefault();
 
-    const amountOfBags = parseInt(event.target.bags.value);
+    const amountOfBags = event.target.bags.value;
 
 
     props.onNewOrderCreation({

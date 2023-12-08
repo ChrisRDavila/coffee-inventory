@@ -2,6 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function OrderDetail(props){
+
+  const messageStyle = {
+    color: 'red'
+  }
   const { order, onClickingDelete, onClickingBuy } = props;
   return (
     <React.Fragment>
@@ -15,7 +19,8 @@ function OrderDetail(props){
       {
         order.amount > 0 ? (
         <button onClick={() => onClickingBuy(order.id)}>Buy 1 pound</button>) : (
-        <h1>{order.name} is out of stock</h1>)
+          
+        <h1 style={messageStyle}>{order.name} is out of stock</h1>)
       }
       <hr/>
     </React.Fragment>

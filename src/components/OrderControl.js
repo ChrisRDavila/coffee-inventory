@@ -15,9 +15,16 @@ class OrderControl extends React.Component {
     }
 
     handleClick = () => {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
+      if (this.state.selectedOrder != null) {
+        this.setState({
+          formVisibleOnPage: false,
+          selectedOrder: null
+        });
+      } else {
+        this.setState(prevState => ({
+          formVisibleOnPage: !prevState.formVisibleOnPage,
+        }));
+      }
     }
 
     handleAddingNewOrderToList = (newOrder) => {

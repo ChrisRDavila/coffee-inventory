@@ -10,7 +10,8 @@ class OrderControl extends React.Component {
       this.state = {
         formVisibleOnPage: false,
         mainOrderList: [],
-        selectedOrder: null
+        selectedOrder: null,
+        editing: false
       };
     }
 
@@ -25,6 +26,11 @@ class OrderControl extends React.Component {
           formVisibleOnPage: !prevState.formVisibleOnPage,
         }));
       }
+    }
+
+    handleEditClick = () => {
+      console.log("handleEditClick reached!");
+      this.setState({editing: true});
     }
 
     handleAddingNewOrderToList = (newOrder) => {
@@ -52,7 +58,7 @@ class OrderControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.selectedOrder != null){
-      currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} onClickingDelete={this.handleDeletingOrder}/>
+      currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} onClickingDelete={this.handleDeletingOrder} onClickingEdit={this.handleEditClick}/>
       buttonText = "Return to Order List";
     }
     else if (this.state.formVisibleOnPage){

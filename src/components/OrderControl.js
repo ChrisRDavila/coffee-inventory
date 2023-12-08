@@ -38,13 +38,21 @@ class OrderControl extends React.Component {
       const selectedOrder = this.state.mainOrderList.filter(order => order.id === id)[0];
       this.setState({selectedOrder: selectedOrder});
     }
+
+    handleDeletingOrder = (id) => {
+      const newMainOrderList = this.state.mainOrderList.filter(order => order.id !== id);
+      this.setState({
+        mainOrderList: newMainOrderList,
+        selectedOrder: null
+      });
+    }
     
 
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.selectedOrder != null){
-      currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} />
+      currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} onClickingDelete={this.handleDeletingOrder}/>
       buttonText = "Return to Order List";
     }
     else if (this.state.formVisibleOnPage){

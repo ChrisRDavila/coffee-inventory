@@ -7,7 +7,8 @@ class OrderControl extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        formVisibleOnPage: false
+        formVisibleOnPage: false,
+        mainOrderList: []
       };
     }
 
@@ -26,7 +27,7 @@ class OrderControl extends React.Component {
       currentlyVisibleState = <NewOrderForm />;
       buttonText = "Return to Order List";
     } else {
-      currentlyVisibleState = <OrderList />;
+      currentlyVisibleState = <OrderList orderList={this.state.mainOrderList}/>;
       buttonText = "Add Order";
     }
     return (

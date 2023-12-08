@@ -1,7 +1,8 @@
 import React from "react";
 import Order from "./Order";
+import PropTypes from "prop-types";
 
-function OrderList(){
+function OrderList(props){
   return (
     <React.Fragment>
       <hr/>
@@ -17,5 +18,9 @@ function OrderList(){
     </React.Fragment>
   );
 }
+
+OrderList.propTypes = {
+  orderList: PropTypes.array
+};
 
 export default OrderList;

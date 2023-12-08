@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function OrderDetail(props){
-  const { order } = props;
+  const { order,onClickingDelete } = props;
   return (
     <React.Fragment>
       <h1>Order Detail</h1>
@@ -10,14 +10,15 @@ function OrderDetail(props){
       <p><em>Price per pound: ${order.price}</em></p>
       <p><em>Roast: {order.roast}</em></p>
       <p><em>In Stock: {order.amount}</em></p>
-
+      <button onClick={()=> onClickingDelete(order.id) }>Delete Order</button>
       <hr/>
     </React.Fragment>
   );
 }
 
 OrderDetail.propTypes = {
-  order: PropTypes.object
+  order: PropTypes.object,
+  onClickingDelete: PropTypes.func
 };
 
 export default OrderDetail;

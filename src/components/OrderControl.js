@@ -2,6 +2,7 @@ import React from "react";
 import OrderList from "./OrderList";
 import NewOrderForm from "./NewOrderForm";
 import OrderDetail from "./OrderDetail";
+import EditOrderForm from "./EditOrderForm";
 
 class OrderControl extends React.Component {
   
@@ -57,7 +58,11 @@ class OrderControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.selectedOrder != null){
+    if (this.state.editing ) {
+      currentlyVisibleState = <EditOrderForm order = {this.state.selectedOrder} />
+      buttonText = "Return to Order List";
+    }
+    else if (this.state.selectedOrder != null){
       currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} onClickingDelete={this.handleDeletingOrder} onClickingEdit={this.handleEditClick}/>
       buttonText = "Return to Order List";
     }

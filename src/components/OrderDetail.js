@@ -10,6 +10,7 @@ function OrderDetail(props){
       <p><em>Price per pound: ${order.price}</em></p>
       <p><em>Roast: {order.roast}</em></p>
       <p><em>In Stock: {order.amount}</em></p>
+      <button onClick={ props.onClickingEdit }>Update Order</button>
       <button onClick={()=> onClickingDelete(order.id) }>Delete Order</button>
       <hr/>
     </React.Fragment>
@@ -18,7 +19,8 @@ function OrderDetail(props){
 
 OrderDetail.propTypes = {
   order: PropTypes.object,
-  onClickingDelete: PropTypes.func
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
 
 export default OrderDetail;

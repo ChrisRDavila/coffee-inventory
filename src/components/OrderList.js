@@ -6,7 +6,7 @@ function OrderList(props){
   return (
     <React.Fragment>
       <hr/>
-      {props.mainOrderList.map((order, index) =>
+      {props.orderList.map((order) =>
         <Order
           whenOrderClicked = { props.onOrderSelection }
           name={order.name}
@@ -14,6 +14,7 @@ function OrderList(props){
           price={order.price}
           roast={order.roast}
           amount={order.amount}
+          bags={order.bags}
           id={order.id}
           key={order.id}/>
       )}
@@ -22,7 +23,7 @@ function OrderList(props){
 }
 
 OrderList.propTypes = {
-  mainOrderList: PropTypes.array,
+  orderList: PropTypes.array,
   onOrderSelection: PropTypes.func
 };
 

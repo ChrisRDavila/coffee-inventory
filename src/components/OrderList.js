@@ -3,7 +3,13 @@ import Order from "./Order";
 
 function OrderList(){
   return (
-    <Order />
+    <Order 
+      name={coffee.name}
+      origin={coffee.origin}
+      price={coffee.price}
+      roast={coffee.roast}
+      amount={coffee.amount}
+    />
   );
 }
 

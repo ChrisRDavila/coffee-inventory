@@ -12,4 +12,12 @@ function Order(){
   );
 }
 
+Order.propTypes = {
+  name: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  roast: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired
+};
+
 export default Order;

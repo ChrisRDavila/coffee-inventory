@@ -3,21 +3,6 @@ import PropTypes from "prop-types";
 
 function ReusableOrderForm(props){
 
-  // function handleNewOrderFormSubmission(event) {
-  //   event.preventDefault();
-
-  //   const amountOfBags = event.target.bags.value;
-
-
-  //   props.onNewOrderCreation({
-  //     name: event.target.name.value, 
-  //     origin: event.target.origin.value, 
-  //     price: parseInt(event.target.price.value), 
-  //     roast: event.target.roast.value,
-  //     bags: 0,
-  //     amount: parseInt(amountOfBags * 130)
-  //   });
-  // }
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ReusableOrderForm from "./ReusableOrderForm";
 
 function EditOrderForm(props){
   const { order } = props;
@@ -20,37 +21,9 @@ function EditOrderForm(props){
 
   return (
     <React.Fragment>
-      <form onSubmit={handleEditOrderFormSubmission}>
-      <input
-          type='text'
-          name='name'
-          placeholder='name of blend'
-          className='form-control' />
-        <input
-          type='text'
-          name='origin'
-          placeholder='country of origin'
-          className='form-control' />
-        <input
-          type='number'
-          name='price'
-          min='0'
-          placeholder="price per pound"
-          className='form-control' />
-        <input
-          type='text'
-          name='roast'
-          placeholder='style of roast'
-          className='form-control' />
-        <input
-          type='number'
-          name='amount'
-          min='0'
-          placeholder='pounds in inventory' 
-          className='form-control'/>
-
-        <button type='submit'>Edit this List Item</button>
-      </form>
+      <ReusableOrderForm
+      formSubmissionHandler={handleEditOrderFormSubmission}
+      buttonText="Update Order" />
     </React.Fragment>
   );
 }

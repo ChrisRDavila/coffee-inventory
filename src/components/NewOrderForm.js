@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from 'uuid';
+import ReusableOrderForm from "./ReusableOrderForm";
 
 function NewOrderForm(props){
 
@@ -22,37 +23,9 @@ function NewOrderForm(props){
   }
   return (
     <React.Fragment>
-      <form onSubmit={handleNewOrderFormSubmission}>
-      <input
-          type='text'
-          name='name'
-          placeholder='name of blend'
-          className='form-control' />
-        <input
-          type='text'
-          name='origin'
-          placeholder='country of origin'
-          className='form-control' />
-        <input
-          type='number'
-          name='price'
-          min='0'
-          placeholder='price per pound'
-          className='form-control' />
-        <input
-          type='text'
-          name='roast'
-          placeholder='style of roast'
-          className='form-control' />
-        <input
-          type='number'
-          name='bags'
-          min='0'
-          placeholder='add bag to inventory' 
-          className='form-control'/>
-
-        <button type='submit'>Add</button>
-      </form>
+      <ReusableOrderForm
+      formSubmissionHandler={handleNewOrderFormSubmission}
+      buttonText="Add to Inventory" />
     </React.Fragment>
   );
 }

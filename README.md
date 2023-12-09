@@ -1,6 +1,31 @@
-# Getting Started with Create React App
+# Coffee inventory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### A client side application showcasing full CRUD (Create, Read, Update, Delete) functionality in a React application
+
+#### By Christopher Davila
+
+## Technologies Used
+
+* _React_
+* _JSX_
+* _Node.js_
+* _javascript_
+* _Html_
+
+## Description
+* Application to sell and track inventory for a coffee company.  Client can create, read, update and delete entries, add 130 pound bags to the inventory and sell single pounds of coffee. The application will not allow consumer to buy coffee once amount of inventory is at 0.
+
+## Diagram
+* below is a diagram created on draw.io to demonstration the component/prop relationships of this application:
+![Draw.io-Diagram](https://drive.google.com/file/d/1VQspRKNKhCHHAVxN4eE8IzMUQApkQgxR/view?usp=sharing)
+
+## Setup/Installation Requirements
+
+* 1. Clone this repo using `\$ git clone https://github.com/ChrisRDavila/coffee-inventory.git`
+to clone the GitHub repository.
+* 2. Open your terminal (e.g., Terminal or GitBash) and navigate to the correct directory using `\$ cd coffee-inventory` and run "npm install" to download all the package dependencies.
+* 3. Next run `\$ npm run start` to start the server. Once the server loads, the webpage should load automatically but if not type in the localhost route that your terminal shows like `https://localhost:3000/`.
+* 4. Once launched follow prompts to Create, Read, Update and Delete entries using the the form input provided.
 
 ## Available Scripts
 
@@ -39,32 +64,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Known Bugs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* _Cannot update to quantity of bags other then full or double restock_
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
+[MIT](https://github.com/ChrisRDavila/coffee-inventory/blob/main/License.txt)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

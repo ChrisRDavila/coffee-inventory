@@ -5,16 +5,18 @@ import ReusableOrderForm from "./ReusableOrderForm";
 function EditOrderForm(props){
   const { order } = props;
 
+  
+
   function handleEditOrderFormSubmission(event) {
     event.preventDefault();
-    const numberOfBags = 0;
+
+    const amountOfBags = event.target.bags.value;
     props.onEditOrder({
       name: event.target.name.value, 
       origin: event.target.origin.value,
       price: parseInt(event.target.price.value),
       roast: event.target.roast.value,
-      amount: parseInt(event.target.amount.value),
-      bags: numberOfBags,
+      amount: parseInt(amountOfBags * 130),
       id: order.id
     });
   }

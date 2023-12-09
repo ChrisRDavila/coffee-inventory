@@ -83,18 +83,18 @@ class OrderControl extends React.Component {
     
     if (this.state.editing ) {
       currentlyVisibleState = <EditOrderForm order = {this.state.selectedOrder} onEditOrder={this.handleEditingOrderInList}/>
-      buttonText = "Return to Order List";
+      buttonText = "Return to Inventory List";
     }
     else if (this.state.selectedOrder != null){
       currentlyVisibleState = <OrderDetail order = {this.state.selectedOrder} onClickingDelete={this.handleDeletingOrder} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyClick}/>
-      buttonText = "Return to Order List";
+      buttonText = "Return to Inventory List";
     }
     else if (this.state.formVisibleOnPage){
       currentlyVisibleState = <NewOrderForm onNewOrderCreation={this.handleAddingNewOrderToList}/>;
-      buttonText = "Return to Order List";
+      buttonText = "Return to Inventory List";
     } else {
       currentlyVisibleState = <OrderList orderList={this.state.mainOrderList} onOrderSelection={this.handleChangingSelectedOrder}/>;
-      buttonText = "Add Order";
+      buttonText = "Add Entry to Inventory";
     }
 
     return (

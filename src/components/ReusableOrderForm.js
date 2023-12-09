@@ -28,8 +28,8 @@ function ReusableOrderForm(props){
           <option value="light">Light Roast</option>
       </select>
       <select name="bags" id="bags">
-          <option value="1">set inventory to 130</option>
-          <option value="2">set inventory to 260</option>
+          <option value="1">stock full order sack</option>
+          <option value="2">stock double order sack</option>
       </select>
 
         <button type='submit'>{props.buttonText}</button>

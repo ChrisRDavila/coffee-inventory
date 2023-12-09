@@ -9,16 +9,16 @@ function OrderDetail(props){
   const { order, onClickingDelete, onClickingBuy } = props;
   return (
     <React.Fragment>
-      <h1>Order Detail</h1>
+      <h1>Inventory Detail</h1>
       <h3>{order.name} - {order.origin}</h3>
       <p><em>Price per pound: ${order.price}</em></p>
       <p><em>Roast: {order.roast}</em></p>
       <p><em>In Stock: {order.amount}</em></p>
-      <button onClick={ props.onClickingEdit }>Update Order</button>
-      <button onClick={()=> onClickingDelete(order.id) }>Delete Order</button>
+      <button onClick={ props.onClickingEdit }>Update Inventory</button>
+      <button onClick={()=> onClickingDelete(order.id) }>Delete Inventory Entry</button>
       {
         order.amount > 0 ? (
-        <button onClick={() => onClickingBuy(order.id)}>Buy 1 pound</button>) : (
+        <button onClick={() => onClickingBuy(order.id)}>Sell 1 pound</button>) : (
           
         <h1 style={messageStyle}>{order.name} is out of stock</h1>)
       }
